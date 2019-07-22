@@ -203,7 +203,7 @@ int validate_buffer_content(const unsigned char *act_buffer, const unsigned char
 static
 void kernel_run_tests(struct ld_kernel_s *ldKernel) {
   static char filename[256];
-  static char dirname[256];
+  static char dirname[128];
   
   char *line;
   FILE *fp;
@@ -467,7 +467,7 @@ char *print_a_number (const char *ptr, const struct type_info_s *type_info) {
 void print_scalar_param_to_file (struct ld_kernel_s *ldKernel,
                                  struct ld_kern_param_s *ldParam)
 {
-  static char filename[80];
+  static char filename[160];
   static char dirname[80];
   FILE *fp;
 
@@ -498,7 +498,7 @@ void print_kernel_problem_to_file(struct ld_kernel_s *ldKernel,
                                   const struct work_size_s *work_sizes,
                                   int work_dim)
 {
-  static char filename[80];
+  static char filename[160];
   static char dirname[80];
   FILE *fp;
   int i, j;
@@ -564,7 +564,7 @@ void print_full_buffer(struct ld_kernel_s *ldKernel,
   }
 
 #if PRINT_KERNEL_PARAMS_TO_FILE == 1
-  static char filename[80];
+  static char filename[160];
   static char dirname[80];
   
   SET_PARAMS_TO_FILE_DIR(dirname, ldKernel);
